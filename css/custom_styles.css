@@ -1,0 +1,26 @@
+.avatar-circle {
+    border-radius: 100%;
+}
+
+.avatar {
+    width: 250px;
+    height: 290px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.small-icon {
+    width: 50px;
+    height: 50px;
+    color: #2c32ff;
+}
+
+.link-no-deco {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.link-no-deco:hover {
+    /*text-decoration: none;*/
+    transition: color 0.6s ease;
+}
