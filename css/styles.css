@@ -620,7 +620,7 @@ input[type='checkbox'] {
 /*     Projects     */
 /********************/
 .basic-3 {
-	padding-top: 3rem;
+	padding-top: 4rem;
 	padding-bottom: 2rem;
 }
 
@@ -666,6 +666,7 @@ input[type='checkbox'] {
 /*     Works     */
 /*****************/
 .basic-4 {
+	padding-top: 2rem;
 	padding-bottom: 1rem;
 }
 
