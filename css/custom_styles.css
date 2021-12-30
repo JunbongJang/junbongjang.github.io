@@ -28,3 +28,7 @@
 .project_image{
     max-height: 200px
 }
+
+img{
+    cursor:pointer;
+}
