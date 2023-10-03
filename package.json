@@ -2,14 +2,11 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://junbongjang.github.io/react-gh-pages",
   "scripts": {
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "tsc && react-scripts build"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -18,6 +15,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.0",
     "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
     "react-markdown": "^8.0.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
