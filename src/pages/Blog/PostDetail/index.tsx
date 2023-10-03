@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 import remarkGfm from "remark-gfm";
-import { api } from "../../lib/axios";
+import { api } from "../../../lib/axios";
 
 import {
   NavButton,
