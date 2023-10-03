@@ -13,7 +13,7 @@ import profile_junbong from "../../assets/images/profile_junbong3.png";
 
 import talks_WIP from "../../assets/images/talks_WIP.png";
 
-
+import { Link } from 'react-router-dom'
 import React from "react";
 
 const talks_section_backup = (
@@ -134,9 +134,9 @@ const home_body = (
                     <div className="row">
                         <div className="col-md-6">
                             <h4>Education</h4>
-                            <ul style={{marginLeft:"-1rem"}}>
+                            <ul>
                                 <li style={{listStyle: "none", marginBottom: "1rem"}}>
-                                    <i className="fas fa-graduation-cap" style={{marginLeft: "-1.5rem"}}></i>
+                                    <i className="fas fa-graduation-cap" style={{marginRight: "0.5rem"}}></i>
                                     <h6 style={{display:"inline"}}>M.S. in Artificial Intelligence</h6>
                                     <br/>
                                     <span className="time">Korea Advanced Institute of Science and Technology (KAIST)</span>
@@ -144,7 +144,7 @@ const home_body = (
                                     <small>Aug 2021 - Aug 2023</small>
                                 </li>
                                 <li style={{listStyle: "none"}}>
-                                    <i className="fas fa-graduation-cap" style={{marginLeft: "-1.5rem"}}></i>
+                                    <i className="fas fa-graduation-cap" style={{marginRight: "0.5rem"}}></i>
                                     <h6 style={{display:"inline"}}>B.S. in Computer Science</h6>
                                     <br/>
                                     <span className="time">Worcester Polytechnic Institute (WPI)</span>
@@ -156,9 +156,9 @@ const home_body = (
 
                         <div className="col-md-6">
                             <h4>Contact</h4>
-                            <ul style={{marginLeft: "-1rem"}}>
+                            <ul >
                                 <li style={{listStyle: "none", marginBottom:"1rem"}}>
-                                    <i className="fas fa-envelope" style={{marginLeft: "-1.5rem"}}></i>
+                                    <i className="fas fa-envelope" style={{marginRight: "0.5rem"}}></i>
                                     <h6 style={{display:"inline"}}>junbongjang@kaist.ac.kr</h6>
                                 </li>
                             </ul>
@@ -218,7 +218,7 @@ const home_body = (
                         <strong>Computer Vision and Pattern Recognition (CVPR), 2023</strong>
                     </p>
                     <p>
-                        <a href="projects/contour-tracking/index.html" className="link-no-deco"> Project Page </a> /
+                        <Link to="/projects/contour-tracking" className="link-no-deco"> Project Page </Link> /
                         <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Jang_Unsupervised_Contour_Tracking_of_Live_Cells_by_Mechanical_and_Cycle_CVPR_2023_paper.pdf" className="link-no-deco"> Paper </a> /
                         <a href="https://github.com/JunbongJang/contour-tracking" className="link-no-deco"> Code </a>
                     </p>
