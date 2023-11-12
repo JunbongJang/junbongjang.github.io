@@ -1,11 +1,10 @@
 {
   "private": true,
+  "homepage": "https://junbongjang.github.io",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "build": "next build && next export",
+    "predeploy": "npm run build",
+    "deploy": "type nul > out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@9gustin/react-notion-render": "^3.11.2",
