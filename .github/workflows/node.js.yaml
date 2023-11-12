@@ -22,7 +22,7 @@ jobs:
         uses: natterstefan/action-next-env@v1
         with:
           path: . # optional, custom/path/to/folder/with/env 
-          environment: development
+          environment: env
 
       - name: Installing my packages
         run: npm ci
