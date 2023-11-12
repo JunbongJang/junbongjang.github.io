@@ -11,46 +11,46 @@ import project_MQP_2022 from "../../assets/images/project_MQP_2022.png";
 import project_marsnet from "../../assets/images/project_marsnet.png";
 import profile_junbong from "../../assets/images/profile_junbong3.png";
 
-import talks_WIP from "../../assets/images/talks_WIP.png";
-
 import { Link } from 'react-router-dom'
 import React from "react";
+import axios from "axios";
 
-const talks_section_backup = (
-    <React.Fragment>
+
+// const talks_section_backup = (
+//     <React.Fragment>
     
-    <div id='talks' className="basic-4 bg-gray">
-        <div className="container">
+//     <div id='talks' className="basic-4 bg-gray">
+//         <div className="container">
 
-            <div className="row">
-                <div className="col">
-                    <h2 className="pb-3">Talks</h2>
-                </div> {/* end of col */}
-            </div> {/* end of row */}
+//             <div className="row">
+//                 <div className="col">
+//                     <h2 className="pb-3">Talks</h2>
+//                 </div> {/* end of col */}
+//             </div> {/* end of row */}
 
 
-            <div className="row">
-                <div className="col-lg-4">
-                    <div className="text-container">
-                        <div className="image-container">
-                            <a href="cv_page.html">
-                                <img className="img-fluid" src={talks_WIP} alt="talks at WIP" />
-                            </a>
-                        </div> {/* end of image-container */}
-                        <p><strong>Location:</strong> Boston Children's Hospital <br/>
-                            <strong>Project:</strong> MARS-Net<br/>
-                            <strong>Date: </strong> Mar 24th, 2021
-                        </p>
+//             <div className="row">
+//                 <div className="col-lg-4">
+//                     <div className="text-container">
+//                         <div className="image-container">
+//                             <a href="cv_page.html">
+//                                 <img className="img-fluid" src={talks_WIP} alt="talks at WIP" />
+//                             </a>
+//                         </div> {/* end of image-container */}
+//                         <p><strong>Location:</strong> Boston Children's Hospital <br/>
+//                             <strong>Project:</strong> MARS-Net<br/>
+//                             <strong>Date: </strong> Mar 24th, 2021
+//                         </p>
 
-                    </div> {/* end of text-container */}
-                </div> {/* end of col */}
+//                     </div> {/* end of text-container */}
+//                 </div> {/* end of col */}
 
-            </div> {/* end of row */}
+//             </div> {/* end of row */}
 
-        </div> {/* end of container */}
-    </div> {/* end of basic-4 */}
-    </React.Fragment>
-);
+//         </div> {/* end of container */}
+//     </div> {/* end of basic-4 */}
+//     </React.Fragment>
+// );
 
 const home_body = (
   
@@ -109,7 +109,7 @@ const home_body = (
                             <i className="ai ai-google-scholar ai-3x small-icon"></i>
                         </a>
                         <a href="https://github.com/JunbongJang" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
-                            <i className="fab fa-github fa-3x small-icon"></i>
+                            <i className="fab fa-github fa-3x small-icon ml-4"></i>
                         </a>
                     </div>
                 </div> {/* end of col */}
@@ -327,8 +327,7 @@ const home_body = (
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
-                    <p className="p-small">Copyright © <a className="no-line" href="#">Junbong Jang</a></p>
-    {/*                    <p className="p-small"><a href="https://honggyuchoi.github.io/">Honggyu Choi</a> used this template</p>*/}
+                    <p className="p-small">Copyright © <a className="no-line" href="#header">Junbong Jang</a></p>
 
                 </div> {/* end of col */}
             </div> {/* enf of row */}
@@ -338,8 +337,74 @@ const home_body = (
   </React.Fragment>
 );
 
+const API_END_POINT = "https://api.notion.com/v1";
+
+export default {
+  async fetch(request: any, env: any) {
+    console.log('fetch@@')
+    return await handleRequest(request)
+  }
+}
+
+function getCorsHeaders(request: any) {
+  return {
+    "Access-Control-Allow-Origin": request.headers.get("Origin"),
+    "Access-Control-Allow-Methods": "GET, HEAD, POST, PUT, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+function handleOptions(request: any) {
+  return new Response(null, {
+    headers: getCorsHeaders(request),
+  });
+}
+
+async function handleRequest(request: any) {
+    console.log('handleRequest')
+  if (request.method === "OPTIONS") {
+    return handleOptions(request);
+  }
+
+  let url = new URL(request.url);
+
+  let requestUrl = `${API_END_POINT}${url.pathname}`;
+
+  let notionResponse = await fetch(requestUrl, {
+    body: request.body,
+    headers: {
+      "Authorization": "Bearer process.env.REACT_APP_NOTION_KEY",
+      "Notion-Version": "2022-06-28",
+    },
+    method: request.method
+  });
+
+  return new Response(notionResponse.body, {
+    headers: {"Content-Type": "application/json", ...getCorsHeaders(request)},
+    status: notionResponse.status,
+    statusText: notionResponse.statusText
+  });
+}
+
 export function Home() {
-  return (
-    home_body
-  );
+    // const notionKey = process.env.REACT_APP_NOTION_KEY
+    // const notionDatabaseKey = process.env.REACT_APP_NOTION_DATABASE_KEY
+
+    // const { Client } = require('@notionhq/client');
+
+    // const notion = new Client({ auth: notionKey });
+
+    // (async () => {
+    //     const blockId = notionDatabaseKey;
+    //     const response = await notion.blocks.children.list({
+    //     block_id: blockId,
+    //     });
+    //     console.log(response);
+    // })();
+
+    
+
+    return (
+        home_body
+    );
 }

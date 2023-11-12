@@ -5,8 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Router } from "./lib/Router";
 // import ReactGA from "react-ga4";
 
-import { useLocation } from 'react-router-dom';
-
 function App() {
   // ReactGA.initialize("G-XYP72XXDTN");
   // ReactGA.send({ hitType: "pageview", page: "/", title: "JunbongJang's React Website" });

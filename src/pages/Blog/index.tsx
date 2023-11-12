@@ -32,10 +32,12 @@ export function Blog() {
     setPosts(response.data.items);
     setPostsCounter(response.data.total_count);
   }
-  console.log(posts)
+  
+  console.log("posts", posts)
   useEffect(() => {
     fetchPosts();
   }, []);
+
 
   return (
     

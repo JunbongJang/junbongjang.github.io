@@ -1,4 +1,5 @@
 # Install
+Install Node.js v18.18.0
 copy and paste index.html, package.json, tsconfig.json from https://github.com/pedr0d1as/Github-Blog/blob/main/package.json
 npm install 
     # "start": "react-scripts start"
