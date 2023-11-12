@@ -3,7 +3,8 @@
   "scripts": {
     "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "export": "next export"
   },
   "dependencies": {
     "@9gustin/react-notion-render": "^3.11.2",
