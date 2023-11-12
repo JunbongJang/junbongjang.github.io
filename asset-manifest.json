@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36a7e0d7.css",
+    "main.js": "/static/js/main.8fff206c.js",
+    "static/media/project_FNA.png": "/static/media/project_FNA.cd7ab7da6d89652eb2f3.png",
+    "static/media/home_suwolbong.jpg": "/static/media/home_suwolbong.c50286483722d090fa58.jpg",
+    "static/media/project_fourierhandflow.png": "/static/media/project_fourierhandflow.0169b3992f9389a45f00.png",
+    "static/media/project_contour_tracking.png": "/static/media/project_contour_tracking.94c2c9e4ffe93ddce80b.png",
+    "static/media/home_KAIST.jpg": "/static/media/home_KAIST.27581c9073f041a90c1d.jpg",
+    "static/media/home_hallasan.jpg": "/static/media/home_hallasan.fd0be768c99b38b284ce.jpg",
+    "static/media/project_marsnet.png": "/static/media/project_marsnet.4760745791cb8a6ac591.png",
+    "static/media/project_MQP_2022.png": "/static/media/project_MQP_2022.ccfe4ef0eaaa3e80fb63.png",
+    "static/media/profile_junbong3.png": "/static/media/profile_junbong3.5e0e92d7568caf1b6127.png",
+    "static/media/architecture.png": "/static/media/architecture.e48aa8e0b2daa01546ea.png",
+    "static/media/jellyfish_icon.ico": "/static/media/jellyfish_icon.e8c7d92c25c6c550b96f.ico",
+    "static/media/project_ksum2023.png": "/static/media/project_ksum2023.39721ab3b1ad2482452b.png",
+    "static/media/tech-bg.svg": "/static/media/tech-bg.9230c233692a7b8cc1144e10b51aa54e.svg",
+    "index.html": "/index.html",
+    "main.36a7e0d7.css.map": "/static/css/main.36a7e0d7.css.map",
+    "main.8fff206c.js.map": "/static/js/main.8fff206c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36a7e0d7.css",
+    "static/js/main.8fff206c.js"
+  ]
+}
