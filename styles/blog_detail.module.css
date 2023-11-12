@@ -1,0 +1,112 @@
+
+.PostDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background: #071422;
+  color: #C4D4E3;
+  -webkit-font-smoothing: antialiased;
+
+  font: 400 1rem Nunito, 'sans-serif';
+}
+
+.PostDetailCard {
+  margin-top: 4rem;
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  background: #0B1B2B;
+  padding: 1rem 2rem 2rem 2rem;
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.PostDetailCard header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.PostDetailCard header a {
+    text-decoration: none;
+    background: transparent;
+    color: #3294F8;
+    transition: border 0.2s;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 160%;
+}
+
+.PostDetailCard header a:hover {
+    border-bottom: 2px solid #3294F8;
+}
+.PostDetailCard div {
+    margin-top: 1rem;
+}
+
+.PostDetailCard div h1 {
+    color: #ffffff;
+}
+
+.PostDetailCard footer {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.PostDetailCard footer span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #C4D4E3;
+}
+.PostDetailCard footer span i {
+    color: #3A536B;
+}
+
+@media (max-width:500px) {
+    .PostDetailCard div h1 {
+        text-align: center;
+    }
+    .PostDetailCard div footer {
+        flex-direction: column;
+    }
+}
+
+.PostDetailContent {
+  max-width: 1000px;
+  min-height: 680px;
+  width: 100%;
+  padding: 2rem;
+  white-space: pre-wrap;
+  overflow: hidden;
+  
+  color: #AFC2D4; 
+}
+
+.PostDetailContent img {
+    max-width: 900px;
+}
+
+.PostDetailContent div {
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+
+}
+
+.PostDetailContent div p, .PostDetailContent div h1, .PostDetailContent div h2, .PostDetailContent div li , .PostDetailContent div a , .PostDetailContent div pre {
+
+    color: #ffffff;
+}
+
