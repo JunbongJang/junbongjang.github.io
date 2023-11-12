@@ -95,21 +95,6 @@ class Board extends React.Component {
   
   
     render() {
-  
-    //   const { Client } = require('@notionhq/client');
-  
-    //   const notion = new Client({ auth: 'secret_2jWjWGOpzDMsqTTemWesriW72BTKAo9f4B50dr9K4Mi' });
-  
-    //   (async () => {
-    //     const blockId = 'bd254b2102634063bb7f760375ce5aff';
-    //     const response = await notion.blocks.children.list({
-    //       block_id: blockId,
-    //       page_size: 50,
-    //     });
-    //     console.log(response);
-    //   })();
-  
-  
       
       const history = this.state.history;
       const current = history[this.state.stepNumber];
