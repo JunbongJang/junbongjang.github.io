@@ -4,8 +4,6 @@
 //     }
 
 // }
-   
-// module.exports = nextConfig
 
 /**
 * @type {import('next').NextConfig}
@@ -26,10 +24,11 @@ const nextConfig = {
         ]
     }, 
     images: {
+      unoptimized: true,
       loader: 'akamai',
       path: '',
     },
-    assetPrefix: './',
+    assetPrefix: 'https://junbongjang.github.io/',
   };
   
 module.exports = nextConfig;

@@ -2,17 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import carousel_hallsan from "../public/images/home_hallasan.jpg";
-import carousel_suwolbong from "../public/images/home_suwolbong.jpg";
-import carousel_kaist from "../public/images/home_KAIST.jpg";
+import carousel_hallsan from "/public/images/home_hallasan.jpg";
+import carousel_suwolbong from "/public/images/home_suwolbong.jpg";
+import carousel_kaist from "/public/images/home_KAIST.jpg";
 
-import project_fourierhandflow from "../public/images/project_fourierhandflow.png";
-import project_contour_tracking from "../public/images/project_contour_tracking.png";
-import project_FNA from "../public/images/project_FNA.png";
-import project_ksum2023 from "../public/images/project_ksum2023.png";
-import project_MQP_2022 from "../public/images/project_MQP_2022.png";
-import project_marsnet from "../public/images/project_marsnet.png";
-import profile_junbong from "../public/images/profile_junbong3.png";
+import project_fourierhandflow from "/public/images/project_fourierhandflow.png";
+import project_contour_tracking from "/public/images/project_contour_tracking.png";
+import project_FNA from "/public/images/project_FNA.png";
+import project_ksum2023 from "/public/images/project_ksum2023.png";
+import project_MQP_2022 from "/public/images/project_MQP_2022.png";
+import project_marsnet from "/public/images/project_marsnet.png";
+import profile_junbong from "/public/images/profile_junbong3.png";
 
 
 const home_body = (

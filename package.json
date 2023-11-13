@@ -4,7 +4,8 @@
   "scripts": {
     "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "type nul > out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "type nul > out/.nojekyll && gh-pages -d out --dotfiles",
+    "dev": "next dev"
   },
   "dependencies": {
     "@9gustin/react-notion-render": "^3.11.2",
