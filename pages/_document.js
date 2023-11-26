@@ -78,10 +78,10 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          <Script src="js/jquery.min.js" strategy="beforeInteractive"/> {/* <!-- jQuery for Bootstrap's JavaScript plugins --> */}
-          <Script src="js/jquery.easing.min.js" strategy="beforeInteractive"/> {/* <!-- jQuery Easing for smooth scrolling between anchors --> */}
-          <Script src="js/bootstrap.min.js" strategy="afterInteractive"/> {/* <!-- Bootstrap framework --> */}
-          <Script src="js/scripts.js" strategy="afterInteractive"/>  {/* <!-- Custom scripts --> */}
+          <Script src="/js/jquery.min.js" strategy="beforeInteractive"/> {/* <!-- jQuery for Bootstrap's JavaScript plugins --> */}
+          <Script src="/js/jquery.easing.min.js" strategy="beforeInteractive"/> {/* <!-- jQuery Easing for smooth scrolling between anchors --> */}
+          <Script src="/js/bootstrap.min.js" strategy="afterInteractive"/> {/* <!-- Bootstrap framework --> */}
+          <Script src="/js/scripts.js" strategy="afterInteractive"/>  {/* <!-- Custom scripts --> */}
         </body>
       </Html>
     );

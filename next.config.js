@@ -1,9 +1,3 @@
-// const nextConfig = {
-//     images: {
-//         unoptimized: true
-//     }
-
-// }
 
 /**
 * @type {import('next').NextConfig}

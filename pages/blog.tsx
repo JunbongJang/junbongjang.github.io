@@ -18,9 +18,7 @@ function formatText(text: string, limitLength = 50) {
 
 export default function Blog({ blogs }) {
 
-  // console.log('@@@@@@@@')
   // console.log('blogs', blogs);
-  // console.log('first_blog', first_blog)
   
   return (
     <>
@@ -36,7 +34,7 @@ export default function Blog({ blogs }) {
           <p></p>
 
           <h1 className={styles.title}>
-            Blog (under construction)
+            Embarrassing Blog
           </h1>
 
           <div className={styles.search_section}>
@@ -64,7 +62,7 @@ export default function Blog({ blogs }) {
                   <header>
                     <h3>{book.properties.이름.title[0].plain_text}</h3>
                     <span>{
-                    formatDistanceToNow(new Date(book.created_time), {
+                    formatDistanceToNow(new Date(book.created_time), {  // book.properties.생성일.date.start
                       locale: enUS,
                       addSuffix: true,
                     })
@@ -92,9 +90,9 @@ export async function getStaticProps() {
     database_id: process.env.NOTION_DATABSE_ID,
   });
   
-  const response_a_blog = await notion.blocks.children.list({
-    block_id: response_blogs.results[0].id,
-  });
+  // const response_a_blog = await notion.blocks.children.list({
+  //   block_id: response_blogs.results[0].id,
+  // });
 
   
   return {
