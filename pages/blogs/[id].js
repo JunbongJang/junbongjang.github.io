@@ -3,17 +3,20 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Date from '../../components/date';
 import styles from '../../styles/blog_detail.module.css';
+import { Fragment } from 'react';
 
-import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import { NotionRenderer } from "@notion-render/client";
-import hljsPlugin from "@notion-render/hljs-plugin";
-import { notFound } from "next/navigation";
-import { Render } from '@9gustin/react-notion-render'
+// import bookmarkPlugin from "@notion-render/bookmark-plugin";
+// import { NotionRenderer } from "@notion-render/client";
+// import hljsPlugin from "@notion-render/hljs-plugin";
+// import { notFound } from "next/navigation";
+// import { Render } from '@9gustin/react-notion-render'
+import { renderBlock } from '../../components/notion_renderer';
 
 
 export default function BlogPage({ blog_data }) {
   // console.log('page_response', blog_data.page_response)
-  // console.log('list_of_blocks', ...blog_data.list_of_blocks)
+  // console.log('list_of_blocks', ...blog_data.list_of_blocks);
+  // console.log(blog_data.list_of_blocks.length);
 
   // const blocks = fetchPageBlocks(blog_data.page_response.id);
 
@@ -24,10 +27,6 @@ export default function BlogPage({ blog_data }) {
   // renderer.use(hljsPlugin());
   // renderer.use(bookmarkPlugin());
 
-  // const hi = blog_data.list_of_blocks[0]
-  // const jj_html = renderer.render(hi);
-  // console.log('jj_html', jj_html)
-
   return (
     <>
         
@@ -36,18 +35,6 @@ export default function BlogPage({ blog_data }) {
             <meta name="description" content="junbong jang's blog" />
         </Head>
         
-        {/* <div>
-          <Render blocks={blog_data.list_of_blocks} />
-        </div> */}
-        {/* <div>
-            {blog_data.list_of_blocks.map(( a_block ) => (
-            <p key={a_block.id}> 
-            {a_block[a_block.type]['rich_text'].map( (a_text) => (
-              a_text['plain_text']
-            ) )}
-            </p>
-            )  )}
-        </div> */}
 
       <div className={styles.PostDetailContainer}>
         <div className={styles.PostDetailCard}>
@@ -58,7 +45,7 @@ export default function BlogPage({ blog_data }) {
             </Link>
             {/* <a target="_blank" rel="noreferrer">
               See on Github
-              <i className="fa-solid fa-arrow-up-right-from-square"></i>
+              <i className="fas fa-solid fa-arrow-up-right-from-square"></i>
             </a> */}
           </header>
           <div>
@@ -67,10 +54,6 @@ export default function BlogPage({ blog_data }) {
             
           </div>
           <footer>
-            {/* <span>
-              <i className="fas fa-brands fa-github"></i>
-              {post.githubUsername}
-            </span> */}
             <span>
               <i className="fas fa-solid fa-calendar"></i>
               
@@ -85,7 +68,10 @@ export default function BlogPage({ blog_data }) {
         </div>
         <div className={styles.PostDetailContent}>
           <div>
-            <Render blocks={blog_data.list_of_blocks} emptyBlocks />
+            {blog_data.list_of_blocks.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+            {/* <Render blocks={blog_data.list_of_blocks} emptyBlocks /> */}
           </div>
         </div>
 
@@ -120,14 +106,30 @@ export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
     
     const notion = new Client({ auth: process.env.NOTION_API_KEY });
-    const response_a_blog = await notion.blocks.children.list({
-        block_id: params.id
+    const response_blog = await notion.blocks.children.list({
+        block_id: params.id,
     });
+
+
+    let total_response_blog;
+    if (response_blog.has_more) {  // If the response exceeds the 100 block limit of notion api 
+
+      const response_blog2 = await notion.blocks.children.list({
+        block_id: params.id,
+        start_cursor: response_blog.next_cursor
+      });
+
+      total_response_blog = response_blog.results.concat(response_blog2.results);
+    } 
+    else {
+      total_response_blog = response_blog.results;
+    }
+
 
     const page_response = await notion.pages.retrieve({ page_id: params.id });
 
     const blog_data = {
-      list_of_blocks: response_a_blog.results,
+      list_of_blocks: total_response_blog,
       page_response: page_response
     }
     return {
