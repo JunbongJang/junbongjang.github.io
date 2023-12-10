@@ -18,13 +18,13 @@ export default function BlogPage({ blog_data }) {
   
   // const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
-      async function fetchAndSetBlogData() {
-        const data = await getBlogData( blog_data.blog_id );
-        setBlogData(data);
-      }
-      fetchAndSetBlogData();
-    }, []);
+  // useEffect(() => {
+  //     async function fetchAndSetBlogData() {
+  //       const data = await getBlogData( blog_data.blog_id );
+  //       setBlogData(data);
+  //     }
+  //     fetchAndSetBlogData();
+  //   }, []);
  
 
 
