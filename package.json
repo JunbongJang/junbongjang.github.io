@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build && next export",
-    "start": "next start",
-    "dev": "next dev"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
     "@9gustin/react-notion-render": "^3.11.2",
