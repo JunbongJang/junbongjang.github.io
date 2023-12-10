@@ -1,10 +1,8 @@
 {
   "private": true,
-  "homepage": "https://junbongjang.github.io",
   "scripts": {
-    "build": "next build && next export",
-    "predeploy": "npm run build",
-    "deploy": "type nul > out/.nojekyll && gh-pages -d out --dotfiles",
+    "build": "next build",
+    "start": "next start",
     "dev": "next dev"
   },
   "dependencies": {
