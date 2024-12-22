@@ -1005,7 +1005,7 @@ a:hover.back-to-top {
 
 	/* Navigation */
 	.navbar {
-		background-color: transparent;
+		/* background-color: transparent; */
 		box-shadow: none;
 		transition: all 0.2s;
 	}
