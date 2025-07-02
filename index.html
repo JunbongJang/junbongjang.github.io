@@ -64,13 +64,15 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#about">About Me <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link page-scroll" href="#experiences">Experiences</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#projects">Projects</a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#talks">Talks</a>
+                    </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link page-scroll" href="https://junbongjang.vercel.app/blog">Blog</a>
                     </li> -->
@@ -134,7 +136,7 @@
                     <img class="avatar avatar-circle pb-3" src="assets/images/profile_junbong3.png">
                     <div>
                         <h2>Junbong Jang</h2>
-                        <p>Computer Vision Engineer</p>
+                        <p>Robot Vision Engineer</p>
                     </div>
                     <div class="align-self-center">
                         <a href="https://scholar.google.com/citations?user=Ndu8xqMAAAAJ&hl=en&oi=ao" target="_blank"
@@ -151,20 +153,19 @@
                     <div class="row">
                         <div class="col">
                             <p>
-                                I am the robot vision software engineer at <a href="https://livsmed.com/eng/main/" target="_blank">Livsmed</a>.<br>
-                                I am working on estimating the 6D pose of surgical instruments and robot using computer vision.<br>
-                                Before joining Livsmed, I worked as an artificial intelligence engineer at <a href="https://cocone-m.com/" target="_blank">Cocone</a>.<br>
-                                I developed the designer assistment system that generates avatar items using Diffusion models and created recommendation API for Pokecolo app using NLP.<br>
-                                Before joining Cocone, I researched <a href="#project_countour_tracking">contour tracking of live cells</a> at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST</a>
-                                supervised by <br>
-                                <a href="https://sites.google.com/view/tkkim/home" target="_blank">Dr. Tae-kyun Kim</a>. 
+                                I am a Robot Vision Engineer at <a href="https://livsmed.com/eng/main/" target="_blank">Livsmed</a>, in South Korea.<br>
+                                I am developing a vision-based system to estimate the 6D pose of surgical instruments and robots using computer vision.<br>
+                                <!-- At <a href="https://cocone-m.com/" target="_blank">Cocone</a>, I worked as an artificial intelligence engineer.<br>
+                                I developed the designer assistment system that generates avatar items using Diffusion models and created recommendation API for Pokecolo app using NLP.<br> -->
+                                At KAIST, I developed a deep learning model for <a href="#project_countour_tracking">contour tracking of live cells</a>,
+                                supervised by <a href="https://sites.google.com/view/tkkim/home" target="_blank">Dr. Tae-kyun Kim</a>. 
                                 <br>
-                                Before joining KAIST, I worked as a research assistant for <a href="https://scholar.harvard.edu/kwonmoo-lee" target="_blank">Dr. Kwonmoo Lee</a> at Boston Children's Hospital to develop a deep learning-based segmentation pipeline.
+                                At Boston Children's Hospital, I worked as a research assistant, supervised by <a href="https://scholar.harvard.edu/kwonmoo-lee" target="_blank">Dr. Kwonmoo Lee</a>, developing a <a href="#project_marsnet">deep learning-based pipeline for live cell segmentation</a>.
                                 <br>
-                                At Worcester Polytechnic Institute, I researched <a href="#project_mqp_2022">predicting suicide attempts among women</a> for my thesis project, supervised by
-                                Dr. Dmitry Korkin <br><br>
+                                At Worcester Polytechnic Institute, I conducted a research on <a href="#project_mqp_2022">predicting suicide attempts among women</a> for my thesis project, supervised by
+                                <a href="https://www.wpi.edu/people/faculty/dkorkin" target="_blank">Dr. Dmitry Korkin</a> <br><br>
 
-                                My research interests are Computer Vision in Healthcare.
+                                My research interest is in Computer Vision for Healthcare.
                                 <!-- <a href="https://www.cocone-m.com/" target="_blank">코코네</a>에서 인공지능 엔지니어로 근무하고 있습니다.<br>
                                 현재, 확산 모델(Diffusion models)을 활용하여 아바타 아이템을 생성하는 디자이너 보조 시스템을 개발 중이며, NLP를 이용해 포켓코로(Pokecolo) 앱의 추천 API를 제작한 경험이 있습니다.<br>
                                 코코네에 합류하기 전에는 <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST</a>에서 <a href="#project_countour_tracking">세포 윤곽 추적</a> 연구를 <a href="https://sites.google.com/view/tkkim/home" target="_blank">김태균 교수님</a>의 지도하에 진행했습니다.<br>
@@ -215,31 +216,7 @@
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of about -->
-
-    <!-- Experience -->
-    <div id="experiences" class="basic-2">
-        <div class="container">
-
-            <div class="row">
-                <div class="col">
-                    <h2 class="pb-3">Experiences</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-
-            
-            <div class="row mb-5">
-                <div class="col">
-                    <div class="image-container">
-                        <img class="img-fluid" src="assets/images/experience_timeline_2024.png" alt="experience_timeline_2024">
-                    </div> <!-- end of image-container -->
-                </div>
-
-            </div> <!-- end of row -->
-
-
-        </div> <!-- end of container -->
-    </div> <!-- end of Experience -->
-
+    
     <!-- Projects -->
     <div id="projects" class="basic-3">
         <div class="container">
@@ -282,7 +259,7 @@
 
                 <div class="col-lg-8">
 
-                    <p><strong>Medical Label Tool website for cropping ultrasound videos to exclude patient information</strong><br>
+                    <p><strong>Medical Label Tool website for cropping ultrasound videos to anonymize patient data</strong><br>
                         Junbong Jang
                     </p>
                     <p>
@@ -433,7 +410,7 @@
             <!-- end of row -->
 
 
-            <div class="row mb-5">
+            <div id="project_marsnet" class="row mb-5">
                 <div class="col-lg-4">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/project_marsnet.png" alt="marsnet">
@@ -458,6 +435,38 @@
         </div> <!-- end of container -->
     </div> <!-- end of basic-3 -->
     <!-- end of projects -->
+
+    
+    <div id='talks' class="basic-4 bg-gray">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <h2 class="pb-3">Talks</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="">
+                                <img class="img-fluid" src="assets/images/talks_WIP.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Location:</strong> Boston Children's Hospital <br>
+                            <strong>Project:</strong> MARS-Net<br>
+                            <strong>Date: </strong> Mar 24th, 2021
+                        </p>
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+
+            </div> <!-- end of row -->
+
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
 
 
     <!-- Section Divider -->

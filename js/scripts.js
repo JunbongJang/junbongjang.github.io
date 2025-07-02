@@ -18,10 +18,24 @@
 	$(function() {
 		$(document).on('click', 'a.page-scroll', function(event) {
 			var $anchor = $(this);
+			var headerHeight = $('.navbar').outerHeight();
 			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
+				scrollTop: $($anchor.attr('href')).offset().top - headerHeight
 			}, 600, 'easeInOutExpo');
 			event.preventDefault();
+		});
+		
+		// Handle all anchor links for smooth scrolling with header offset
+		$(document).on('click', 'a[href^="#"]', function(event) {
+			var $anchor = $(this);
+			var target = $($anchor.attr('href'));
+			if (target.length) {
+				var headerHeight = $('.navbar').outerHeight();
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top - headerHeight
+				}, 600, 'easeInOutExpo');
+				event.preventDefault();
+			}
 		});
     });
 
